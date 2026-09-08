@@ -151,8 +151,10 @@ exports.subscriptionPaymentController = async (req, res) => {
             quantity: 1
         }]
         const session = await stripe.checkout.sessions.create({
-            success_url: "http://localhost:5173/paymentsuccess",
-            cancel_url: "http://localhost:5173/paymenterror",
+            // success_url: "http://localhost:5173/paymentsuccess",
+            // cancel_url: "http://localhost:5173/paymenterror",
+             success_url: "https://metrokey-frontend-biu3.vercel.app/paymentsuccess",
+            cancel_url: "https://metrokey-frontend-biu3.vercel.app/paymenterror",
             line_items,
             metadata: {
                 agentEmail: email,
